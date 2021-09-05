@@ -10,6 +10,9 @@ public class Order {
 	private Date moment;
 	private OrderStatus status;
 	
+	// Composição -> Um pedido possui um cliente
+	private Client client;
+	
 	// Composição -> Lista de items
 	private List<OrderItem> orderItems = new ArrayList<>();
 	
@@ -17,9 +20,10 @@ public class Order {
 		
 	}
 
-	public Order(Date moment, OrderStatus status) {
+	public Order(Date moment, OrderStatus status, Client client) {
 		this.moment = moment;
 		this.status = status;
+		this.client = client;
 	}
 
 	public Date getMoment() {
@@ -42,6 +46,10 @@ public class Order {
 		return orderItems;
 	}
 	
+	public Client getClient() {
+		return client;
+	}
+
 	public void addItem(OrderItem item) {
 		orderItems.add(item);
 	}
