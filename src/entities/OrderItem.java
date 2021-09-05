@@ -5,7 +5,7 @@ public class OrderItem {
 	
 	// Composição preço do produto
 	private Product product;
-	private Double price = product.getPrice();
+	private Double price;
 	
 	public OrderItem() {
 		
@@ -14,6 +14,7 @@ public class OrderItem {
 	public OrderItem(Integer quantity, Product product) {
 		this.quantity = quantity;
 		this.product = product;
+		this.price = this.product.getPrice();
 	}
 
 	public Integer getQuantity() {
